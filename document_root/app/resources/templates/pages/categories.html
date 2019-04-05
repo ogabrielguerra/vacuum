@@ -1,0 +1,29 @@
+{% include 'parts/header.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Categories</h1>
+            <p>
+                Categories down below are extracted from the dir structure.
+            </p>
+            {% for post in posts %}
+
+            {% if cat == '' %}
+            {% set cat = post.category %}
+            <h2><a href="#">{{cat}}</a></h2>
+
+            {% elseif cat != post.category %}
+            {% set cat = post.category %}
+            <h2><a href="#">{{cat}}</a></h2>
+
+            {% endif %}
+
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+
+{% include 'parts/footer.html' %}

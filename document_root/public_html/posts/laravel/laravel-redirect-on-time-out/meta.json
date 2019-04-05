@@ -1,0 +1,10 @@
+{
+	 "meta_title" : "Laravel: How to redirect users on timeout",
+	 "meta_description" : "How to redirect users on timeout",
+	 "meta_keywords" : "laravel, redirect, tips",
+	 "post_title" : "How to redirect users on timeout",
+	 "post_tags" : "laravel, tips, news",
+	 "post_content" :
+		 "<p>Sometimes web frameworks leads us to weird scenarios. For a protected area, it's common and expected that every session have an inactivity period set and, after that, the user is forced to log in again.",
+	"post_order" : 4
+}

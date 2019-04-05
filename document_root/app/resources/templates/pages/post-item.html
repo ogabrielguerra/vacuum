@@ -1,0 +1,13 @@
+{% include 'parts/header.html' %}
+
+    <div class="container">
+        <h1>News</h1>
+
+        <h2 style="text-transform: uppercase;">CATEGORY: <a href="category/{{category}}">{{category}}</a></h2>
+
+        <h3 class="h4"><span style="color:#dc0445">{{title}}</span></h3><br>
+        {{html|raw}}
+
+    </div>
+
+{% include 'parts/footer.html' %}

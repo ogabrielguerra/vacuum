@@ -1,0 +1,8 @@
+{
+	 "meta_title" : "How to do multiple inserts from inputs",
+	 "meta_description" : "Sometimes we need more than just a simple insertion. For example: imagine you are saving answers from a briefing. Maybe you just don’t even know what questions are or maybe you just hate typing unecessarily.",
+	 "meta_keywords" : "Laravel, forms, tips",
+	 "post_title" : "How to do multiple inserts from inputs",
+	 "post_tags" : "Laravel, forms, tips",
+	 "post_about" : "<p>Sometimes we need more than just a simple insertion. For example: imagine you are saving answers from a briefing. Maybe you just don’t even know what questions are or maybe you just hate typing unnecessarily.</p>"
+}
