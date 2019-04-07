@@ -9,9 +9,10 @@
             $data = $posts->postsCollection;
 
             //Renders view
-            $template = $this->twig->load('pages/categories.html');
             $sitePath = parent::getSitePath();
-            echo $template->render(array('sitePath'=>$sitePath, 'posts'=>$data));
+            $options = array('sitePath' => $sitePath, 'posts' => $data);
+
+            new TwigLoader('pages/category.html', $options);
         }
 
         function void(){

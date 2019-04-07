@@ -26,7 +26,8 @@ class Post extends Base implements iPost{
         $this->loadPostData();
 
         //After loading Post json data if post_order inexists or is null set a default value
-        if($this->post_order=="" || empty($this->post_order)){
+
+        if (!property_exists($this, 'post_order') || $this->post_order == "" || empty($this->post_order)) {
             $this->post_order = 99;
         }
         $path = parent::getPostsPath().$this->category.'/'.$this->slug;
@@ -44,7 +45,7 @@ class Post extends Base implements iPost{
     function loadPostData() : void{
         $path = parent::getPostsPath().$this->category.'/'.$this->slug;
         $jsonPath = $path."/meta.json";
-        //echo $jsonPath;
+
         try{
             if(!file_exists($jsonPath)){
                 throw new Exception('Metadata file not found.');
@@ -62,7 +63,7 @@ class Post extends Base implements iPost{
             if (!file_exists($path . "/content.html")) {
                 $this->content = null;
             }else {
-                //$this->content = file_get_contents($path . "/content.html");
+                $this->content = file_get_contents($path . "/content.html");
             }
 
     }

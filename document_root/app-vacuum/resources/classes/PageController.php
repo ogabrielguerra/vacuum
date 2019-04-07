@@ -11,15 +11,12 @@
             $gtp = new GetThePage($page);
 
             //Does the requested page really exists? If not, redirect
-            $file = './../app/resources/templates/pages/' . $page . '.html';
+            $file = './../app-vacuum/resources/templates/pages/' . $page . '.html';
             if (!is_file($file)) {
                 //header("Location: /");
-
                 die('No file found');
             }
 
-            //The Twig instance comes from Base Class
-            $template = $this->twig->load('pages/' . $page . '.html');
             $sitePath = parent::getSitePath();
             $posts = new Posts(new Media(), new Post());
 
@@ -38,12 +35,17 @@
                 $status = $_GET["status"];
             }
 
-            echo $template->render(array(
+            $page = 'pages/' . $page . '.html';
+
+            $options = array(
                 'meta'=>$renderOptions,
                 'posts'=>$data,
                 'status'=>$status,
                 'sitePath'=>$sitePath,
                 'slug'=>$page
-                ));
+            );
+
+            new TwigLoader($page, $options);
+
         }
     }

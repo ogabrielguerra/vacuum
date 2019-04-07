@@ -7,19 +7,11 @@
 		public $sitePath;
 		public $postsPath;
         public $pagesPath;
-        public $twig;
 
 		function __construct(){
             $this->sitePath = "http://localhost/public_html/";
             $this->postsPath = "./posts/";
             $this->pagesPath = "./pages/";
-
-            //Twig loader and environment.
-            $loader = new Twig_Loader_Filesystem('../app/resources/templates');
-            $this->twig = new Twig_Environment($loader, array(
-                //'cache' => '../vendor/twig/twig/lib/Twig/Cache',
-                'debug' => true
-            ));
         }
 
 		function filterData(array $data) : array{

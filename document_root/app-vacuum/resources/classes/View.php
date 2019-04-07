@@ -13,7 +13,8 @@
 			echo '<div>'.$st.'</div>';
 		}
 
-		function listItens(Array $data, bool $withLinks) : void{
+		function listItems(Array $data, bool $withLinks): void
+		{
 
 			$list = '<ul>';
 			foreach ($data as $item) {
@@ -44,11 +45,9 @@
         function homeFeaturedImages(array $posts) : string{
             $listaCases = '';
 
-            foreach ($posts as $post) {
-                /*
-                 * Do your magic
-                 */
-            }
+			/*
+			 * Do your magic
+			 */
 
             return $listaCases;
         }
@@ -66,4 +65,3 @@
             return $output;
         }
 	}
-?>

@@ -9,7 +9,7 @@
             $html = $blocks->portfolioGridByTag($_GET["slug"]);
 
             //Renders view
-            $template = $this->twig->load('pages/categories.html');
+            $template = $this->twig->load('pages/category.html');
             $sitePath = parent::getSitePath();
             echo $template->render(array('sitePath'=>$sitePath, 'posts'=>$html));
         }

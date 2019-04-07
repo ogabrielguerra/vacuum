@@ -13,8 +13,13 @@
             );
 
             //Renders template
-            $template = $this->twig->load('home.html');
-            $sitePath = parent::getSitePath();
-            echo $template->render(array('sitePath'=>$sitePath, 'posts'=>$html , 'meta'=>$renderOptions));
+            $page = 'home.html';
+            $options = array(
+                'sitePath' => $this->sitePath,
+                'posts' => '',
+                'meta' => $renderOptions
+            );
+            new TwigLoader($page, $options);
+
         }
     }

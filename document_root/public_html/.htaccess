@@ -14,7 +14,7 @@
     # POSTS #
     RewriteRule    ^item/([A-Za-z0-9-]+)?$    index.php?slug=$1    [NC,L]
     RewriteRule    ^tag/([A-Za-z0-9-]+)?$    index.php?slug=$1    [NC,L]
-    RewriteRule    ^categories/([A-Za-z0-9-]+)?$    index.php?slug=$1    [NC,L]
+    RewriteRule    ^category/([A-Za-z0-9-]+)?$    index.php?slug=$1    [NC,L]
 
     # CONTACT #
     RewriteRule    ^contact/(.*)$    index.php?slug=contact&status=$1

@@ -62,7 +62,8 @@
 			return $this->categories;
 		}
 
-        function getPostsWithFeaturedImage(Array $specificPosts=null) : array{
+        function getPostsWithFeaturedImage(): array
+        {
 		    $postsList = array();
 		    foreach($this->postsCollection as $post){
 
@@ -148,4 +149,3 @@
             return $postsList;
         }
 	}
-?>

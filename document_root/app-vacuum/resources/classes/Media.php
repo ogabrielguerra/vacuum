@@ -6,6 +6,7 @@
 		public $category;
 
 		function __construct(){
+            parent::__construct();
 		}
 
 		function setCategory(string $category) : void{
@@ -83,5 +84,3 @@
 
 		}
 	}
-
-?>

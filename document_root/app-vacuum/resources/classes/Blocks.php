@@ -2,6 +2,10 @@
 
     class Blocks{
 
+        public $media;
+        public $posts;
+        public $view;
+
         function __construct()
         {
             $this->media = new Media();

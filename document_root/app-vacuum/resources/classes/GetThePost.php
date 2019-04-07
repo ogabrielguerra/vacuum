@@ -28,10 +28,10 @@
 
             if($post->is_landing_page==true){
 
-                $template = $this->twig->load('pages/post-item-with-content.html');
+                $page = 'pages/post-item-with-content.html';
                 $post->content = str_replace('{{listTags}}', $tagsList, $post->content);
 
-                echo $template->render(array(
+                $options = array(
                     'posts'=>$data,
                     'meta'=>$renderOptions,
                     'sitePath' => $sitePath,
@@ -42,14 +42,14 @@
                     'tagsList' => $tagsList,
                     'html' => $post->content,
                     'slug' => $post->slug
-                ));
+                );
 
             }else {
             // Case default
 
-                $template = $this->twig->load('pages/post-item.html');
+                $page = 'pages/post-item.html';
 
-                echo $template->render(array(
+                $options = array(
                     'posts'=>$posts->postsCollection,
                     'sitePath' => $sitePath,
                     'meta'=>$renderOptions,
@@ -60,7 +60,9 @@
                     'about' => $post->post_about,
                     'html' => $post->content,
                     'slug' => $post->slug
-                ));
+                );
             }
+
+            new TwigLoader($page, $options);
         }
     }
