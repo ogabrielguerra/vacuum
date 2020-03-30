@@ -11,7 +11,7 @@
             $gtp = new GetThePage($page);
 
             //Does the requested page really exists? If not, redirect
-            $file = './../app-vacuum/resources/templates/pages/' . $page . '.html';
+            $file = './../appVacuum/resources/templates/pages/' . $page . '.html';
             if (!is_file($file)) {
                 //header("Location: /");
                 die('No file found');

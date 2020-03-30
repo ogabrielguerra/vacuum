@@ -13,10 +13,10 @@ npm-debug.log
 yarn-error.log
 .env
 .phpunit.result.cache
-*.idea
-*vendor
+.idea
+vendor
 document_root/app/vendor/*
-*.DS_Store
+.DS_Store
 ./document_root/app/vendor/*
 ./document_root/app/composer.lock
 ./document_root/app/package-lock.json

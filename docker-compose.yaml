@@ -3,10 +3,14 @@ version: '2'
 services:
   webserver:
     build: ./
-    image: php-template
+    image: php-template:v1.0
+    container_name: app-vacuum
     ports:
       - "80:80"
       - "443:443"
+    environment:
+      XDEBUG_CONFIG: remote_host=http://localhost
+      PHP_EXTENSION_XDEBUG: 1
     volumes:
       - ./document_root/:/var/www/html
 
