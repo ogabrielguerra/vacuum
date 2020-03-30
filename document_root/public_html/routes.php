@@ -2,11 +2,7 @@
 
     //Workaround for correct routes functioning
     $uri = '/public_html';
-
-    //In the case url doesn't point to root, prepare the url
-    //if($uri!="/")
-        $_SERVER['REQUEST_URI'] = substr($_SERVER['REQUEST_URI'], (strlen($uri)));
-    /* *** */
+    $_SERVER['REQUEST_URI'] = substr($_SERVER['REQUEST_URI'], (strlen($uri)));
 
     $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
         /* HOME */
@@ -41,7 +37,6 @@
     switch ($routeInfo[0]) {
         case FastRoute\Dispatcher::NOT_FOUND:
             // ... 404 Not Found
-            //die();
             break;
 
         case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
@@ -51,7 +46,6 @@
 
         case FastRoute\Dispatcher::FOUND:
 
-
             if($routeInfo[1]== 'HomeController'){
                 //It's home!
                 new HomeController($twig);
@@ -60,7 +54,6 @@
                 // We are pages. Treat us as special items
                 //Just create a view with the same name
                 //example /about will call about.html in templates/pages dir
-                //die();
                 new PageController($routeInfo);
 
             }else{

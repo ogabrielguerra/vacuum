@@ -2,7 +2,7 @@
 
 require 'appVacuum/resources/classes/iBase.php';
 require 'appVacuum/resources/classes/Base.php';
-// use app_vaccum\
+use appVacuum\resources\classes\Foo;
 
 // echo getcwd();
 
@@ -26,6 +26,7 @@ class TestBase extends TestCase
     }
 
     function testIfPostsDirectoryExists(){
+        $foo = new Foo();
         $this->assertDirectoryExists($this->pathToPosts);
     }
 

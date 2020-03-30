@@ -20,5 +20,3 @@
     RewriteRule    ^contact/(.*)$    index.php?slug=contact&status=$1
     #RewriteRule    404    404error.php    [NC,L]    # Handle 404 error
 </IfModule>
-
-#ErrorDocument 404 http://192.168.1.22/public_html/
