@@ -16,6 +16,6 @@
         }
 
         function void(){
-            //It does nothing. Just to feed the callback for a while
+            //It does nothing. Just a workaround to feed the callback for a while
         }
     }
