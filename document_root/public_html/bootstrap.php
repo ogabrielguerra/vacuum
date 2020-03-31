@@ -1,9 +1,5 @@
 <?php /** @noinspection PhpIncludeInspection */
-//ini_set('display_errors', 1);
-//ini_set('display_startup_errors', 1);
-//error_reporting(E_ALL);
 
-//A simple class loader
     spl_autoload_register("loadClasses");
 
     function loadClasses($class){

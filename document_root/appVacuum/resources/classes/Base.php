@@ -8,8 +8,11 @@
 		public $postsPath;
         public $pagesPath;
 
-		function __construct(){
-            $this->sitePath = "http://localhost/public_html/";
+		function __construct($envPath='../appVacuum/'){
+            $dotenv = Dotenv\Dotenv::createImmutable($envPath);
+            $dotenv->load();
+
+            $this->sitePath = getenv('APP_PATH');
             $this->postsPath = "./posts/";
             $this->pagesPath = "./pages/";
         }

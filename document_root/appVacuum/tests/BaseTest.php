@@ -2,9 +2,6 @@
 
 require 'appVacuum/resources/classes/iBase.php';
 require 'appVacuum/resources/classes/Base.php';
-use appVacuum\resources\classes\Foo;
-
-// echo getcwd();
 
 use PHPUnit\Framework\TestCase;
 
@@ -26,7 +23,6 @@ class TestBase extends TestCase
     }
 
     function testIfPostsDirectoryExists(){
-        $foo = new Foo();
         $this->assertDirectoryExists($this->pathToPosts);
     }
 
@@ -36,7 +32,7 @@ class TestBase extends TestCase
 
     function testIfDataIsBeingFiltered(){
         $this->init();
-        $base = new Base();
+        $base = new Base('appVacuum');
 
         $data = $base->filterData( scandir($this->pathToPosts) );
 
@@ -48,11 +44,4 @@ class TestBase extends TestCase
         }
     }
 
-    // function testJsonToObjectConversion(){
-        
-    // }
-
-    // function testFilterData(){
-        
-    // }
 }

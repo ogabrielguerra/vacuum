@@ -17,6 +17,7 @@ yarn-error.log
 vendor
 document_root/app/vendor/*
 .DS_Store
+.env
 ./document_root/app/vendor/*
 ./document_root/app/composer.lock
 ./document_root/app/package-lock.json

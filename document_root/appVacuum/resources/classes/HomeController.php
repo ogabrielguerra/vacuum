@@ -2,6 +2,7 @@
 
     class HomeController extends Base implements iHome{
         function __construct() {
+            
             parent::__construct();
 
             //Get default meta

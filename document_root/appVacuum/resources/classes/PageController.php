@@ -7,6 +7,7 @@
         {
 
             parent::__construct();
+            
             $page = $routeInfo[2]["name"];
             $gtp = new GetThePage($page);
 
