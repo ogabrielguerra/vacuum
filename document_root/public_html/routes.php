@@ -1,18 +1,21 @@
 <?php
 
-    //Workaround for correct routes functioning
-    $uri = '/public_html';
-    $_SERVER['REQUEST_URI'] = substr($_SERVER['REQUEST_URI'], (strlen($uri)));
+//Workaround for correct routes functioning
 
-    $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-        /* HOME */
-        $r->addRoute('GET', '/', 'HomeController');
+// For installing in a server root /, comment lines below
+$uri = '/public_html';
+$_SERVER['REQUEST_URI'] = substr($_SERVER['REQUEST_URI'], (strlen($uri)));
+//
 
-        /* Generic route for Pages */
-        $r->addRoute('GET', '/{name}', 'PageController');
+$dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
+    /* HOME */
+    $r->addRoute('GET', '/', 'HomeController');
 
-        /* Posts */
-        $r->addRoute('GET', '/item/{slug}', 'PortfolioController');
+    /* Generic route for Pages */
+    $r->addRoute('GET', '/{name}', 'PageController');
+
+    /* Posts */
+    $r->addRoute('GET', '/item/{slug}', 'PortfolioController');
         $r->addRoute('GET', '/tag/{slug}', 'TagController');
         $r->addRoute('GET', '/categories/{slug}', 'CategoryController');
 
@@ -33,7 +36,6 @@
     $uri = rawurldecode($uri);
     $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 
-
     switch ($routeInfo[0]) {
         case FastRoute\Dispatcher::NOT_FOUND:
             // ... 404 Not Found
@@ -48,7 +50,7 @@
 
             if($routeInfo[1]== 'HomeController'){
                 //It's home!
-                new HomeController($twig);
+                new HomeController();
 
             }else if($routeInfo[1]== 'PageController'){
                 // We are pages. Treat us as special items
